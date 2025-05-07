@@ -34,8 +34,7 @@ dotfiles/
 
 This repository contains my configuration for NixOS, focused on a Wayland + Hyprland environment.
 
-> [NOTE]
->
+> [!NOTE]
 > I dual-boot with Ubuntu, and both systems share a common partition for most dotfiles. Config files like .zshrc and .config/* are stored on a shared drive (/mnt/Shared) and symlinked into each OS. However, this repository is focused specifically on the NixOS side of the setup — system configuration (/etc/nixos) and desktop environment settings used under NixOS.
 
 ## How to Use
