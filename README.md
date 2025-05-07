@@ -13,8 +13,8 @@ Welcome to my dotfiles repo! This contains my full setup for a NixOS system runn
 ## Layout
 
 ``` zsh
-dotfiles/
-├── /github # Files Related to this repo.
+nixos-hyprland-dotfiles/
+├── /GITHUB # Files Related to this repo.
 ├── /etc/nixos/ # System configuration for NixOS
 │ ├── configuration.nix
 │ ├── hardware-configuration.nix
