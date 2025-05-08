@@ -70,4 +70,4 @@ MIT — feel free to use and modify.
 
 ## Credits
 
-My configs used [] as base.
+My configs used [UnFunnyGuy/hyprland-dots](https://github.com/UnFunnyGuy/hyprland-dots/) as base.
