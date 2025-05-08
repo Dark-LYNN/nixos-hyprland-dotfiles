@@ -1,0 +1,22 @@
+{
+  "custom/dot": {
+    "format": "  ",
+    "tooltip": false
+  },
+  "custom/dot-alt": {
+    "format": "  ",
+    "tooltip": false
+  },
+  "custom/left-arrw": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrw": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow-dec": {
+    "format": "  ",
+    "tooltip": false
+  }
+}

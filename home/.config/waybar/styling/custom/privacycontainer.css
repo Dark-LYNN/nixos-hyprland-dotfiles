@@ -1,0 +1,16 @@
+@import "../colors-waybar.css";
+
+
+#privacy-container .text-button {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 15px;
+}
+
+box#privacy-container {
+  margin: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+  background-color: @primary-container;
+  border-radius: 10px;
+}

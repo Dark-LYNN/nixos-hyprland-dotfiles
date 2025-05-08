@@ -1,0 +1,47 @@
+[global]
+  font = "Product Sans"
+	allow_markup = yes       ## Enable a subset of html markup like <b><i><s><u>
+	format = "<b>%s</b>\n%b" ## %s = summary | %b = body
+	sort = yes               ## Sort by urgency
+	indicate_hidden = yes    ## Show how many messages
+ 	alignment = left         ## Align of message text
+	bounce_freq = 0          ## bounce if text larger than window (0 = Disabled)
+  ellipsize = middle       ## where to make an ellipsis in long lines
+  show_age_threshold = -1  ## Show age of message (-1 = Disabled)
+	word_wrap = yes          ## Split notifications into multiple lines
+	ignore_newline = no      ## ignore /n
+
+	### Geometry ###
+	width = 320
+	height = 500
+	origin = top-right
+	offset = 5x6
+    progress_bar = true           ## Progress bar enabled
+    progress_bar_height = 10      ## progress bar height
+    progress_bar_frame_width = 2  ## Frame width of the progress bar
+    progress_bar_min_width = 150  ## The minimum width of the progress bar
+    progress_bar_max_width = 300  ## The maximum width of the progress bar
+	frame_width = 2                 ## Frame
+	transparency = 0                ## The transparency of the window. (range: [0; 100])
+	idle_threshold = 0              ## Don't remove messages, if the user is idle (0 = Disabled)
+	monitor = 0                     ## Which monitor to be displayed on
+	follow = none                   ## Display notification on focused monitor.  (options: [mouse, keyboard, none])
+	show_indicators = yes           ## Display indicators for URLs
+  sticky_history = no             ## Should a popped be sticky or timeout.
+	line_height = 8
+	separator_height = 3
+	padding = 16
+	horizontal_padding = 12
+	text_icon_padding = 16
+	separator_color = frame         ## Define a color for the separator
+	startup_notification = false    ## Print a notification on startup
+	icon_position = left
+    min_icon_size = 32
+	max_icon_size = 48
+	corner_radius = 17
+	always_run_script = true
+
+  ### Mouse actions ###
+	mouse_left_click = close_current
+	mouse_middle_click = do_action, close_current
+	mouse_right_click = close_all

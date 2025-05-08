@@ -1,0 +1,19 @@
+@import "colors-waybar.css";
+@import "workspace.css";
+@import "custom/dec.css";
+@import "bar.css";
+@import "general.css";
+@import "stock.css";
+@import "custom/launcher.css";
+@import "custom/battery.css";
+@import "custom/apptitle.css";
+@import "custom/clock.css";
+@import "custom/privacycontainer.css";
+@import "custom/systemcontainer.css";
+
+
+* {
+  border: none;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12px;
+}

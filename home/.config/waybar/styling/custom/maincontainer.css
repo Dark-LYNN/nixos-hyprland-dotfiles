@@ -1,0 +1,80 @@
+@import "../colors-waybar.css";
+
+#backlight,
+#pulseaudio,
+#custom-pacman-update {
+  font-size: 13px;
+  color: @primary;
+}
+
+
+#battery.text,
+#backlight.text,
+#pulseaudio.text,
+#custom-pacman-update.text {
+  font-size: 12px;
+  font-weight: 800;
+  color: @on-secondary-container;
+}
+
+
+
+label#battery,
+label#battery.text,
+label#backlight,
+label#backlight.text,
+label#custom-pacman-update,
+label#custom-pacman-update.text,
+label#pulseaudio,
+label#pulseaudio.text {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background-color: @secondary-container;
+}
+
+label#battery {
+  padding-left: 15px;
+  padding-right: 2px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+label#battery.text {
+  padding-left: 3px;
+  padding-right: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+label#custom-pacman-update {
+  padding-left: 7px;
+  padding-right: 4px;
+}
+
+label#custom-pacman-update.text {
+  padding-left: 4px;
+  padding-right: 5px;
+}
+
+label#pulseaudio {
+  padding-left: 6px;
+  padding-right: 4px;
+}
+
+label#pulseaudio.text {
+  padding-left: 3px;
+  padding-right: 5px;
+ 
+}
+
+label#backlight {
+  padding-left: 6px;
+  padding-right: 4px;
+}
+
+label#backlight.text {
+  padding-left: 4px;
+  padding-right: 15px;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}

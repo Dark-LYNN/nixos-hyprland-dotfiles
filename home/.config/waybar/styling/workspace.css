@@ -1,0 +1,39 @@
+@import "colors-waybar.css";
+
+#workspaces label {
+  font-size: 13px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+box#workspaces {
+  margin-top: 3px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  background-color:  alpha(@secondary-container,0.7);
+}
+
+#workspaces button {
+  color: alpha(@on-secondary-container, 0.35);
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+#workspaces button:hover {
+  color: alpha(@on-secondary-container, 0.95);
+  /* cursor: pointer; */
+  background: alpha(@on-secondary-container, 0.5);
+  border-radius: 8px;
+}
+
+#workspaces button.focused {
+  color: @primary;
+}
+
+#workspaces button.active {
+  color: @primary;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+}

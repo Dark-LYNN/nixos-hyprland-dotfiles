@@ -1,0 +1,64 @@
+{
+  "group/system-container": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/battery-grp",
+      "group/pulseaudio-grp",
+      "group/backlight-grp",
+      "group/bluetooth"
+    ]
+  },
+  "group/pulseaudio-grp": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#text"
+    ]
+  },
+  "group/bluetooth": {
+    "orientation": "horizontal",
+    "modules": [
+      "bluetooth",
+      "bluetooth#text"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "{icon}",
+    "tooltip": false,
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󪤥",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "󪤥",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio#text": {
+    "tooltip": false,
+    "format": "<b>{volume}</b>",
+    "format-bluetooth": "<b>{volume}</b>"
+  },
+  "bluetooth": {
+    "format": "󰂱 ",
+    "format-connected": "󰂱 ",
+    "format-disconnected": "󰂲 ",
+    "tooltip": true,
+    "on-click": "blueman-manager"
+  },
+  "bluetooth#text": {
+    "tooltip": false,
+    "format": "",
+    "format-connected": "<b>{num_connections}</b>",
+    "on-click": "blueman-manager"
+  }
+}
