@@ -55,7 +55,8 @@ This repository contains my configuration for NixOS, focused on a Wayland + Hypr
 
 ## Screenshots
 
-*(TO BE ADDED)*
+![](./GITHUB/Images/Screenshot-01.png)
+![](./GITHUB/Images/Screenshot-02.png)
 
 ## Notes
 
@@ -66,3 +67,7 @@ This repository contains my configuration for NixOS, focused on a Wayland + Hypr
 ## License
 
 MIT — feel free to use and modify.
+
+## Credits
+
+My configs used [] as base.
