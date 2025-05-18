@@ -37,4 +37,10 @@
   ## ─────────────────────────────────────────────────────────────
   hardware.bluetooth.enable = true;      # Enables Bluetooth support
   hardware.bluetooth.powerOnBoot = true; # Start Bluetooth on startup
+
+  ## ─────────────────────────────────────────────────────────────
+  ## Software
+  ## ─────────────────────────────────────────────────────────────
+  hardware.ckb-next.enable = true;       # Enable ckb-next (Corsair Peripherals)
+
 }

@@ -23,9 +23,10 @@ in {
     bluez-tools          # Bluetooth Tools
     brave                # Chromium Browser
     brightnessctl        # Brightness Manager
-    bsdgames             # games from NetBSD
+    ckb-next             # Corsair Peripherals
     curl                 # transferring files with URL syntax
     dconf                # GSettings Backend
+    direnv               # Directory custom environments
     dunst                # Notification Manager
     ffmpeg               # Video Processing/Encoding
     firefox              # Browser
@@ -42,24 +43,29 @@ in {
     gsettings-desktop-schemas # Collection of GSettings schemas
     gvfs                 # Virtual File Manager
     hyprland             # Tiling Window Manager
+    jq                   # CLI JSON processor
     kdePackages.qt6ct    # qt6
     killall              # KillAll processes
     kitty                # Terminal Emulator
     libnotify            # Notifications
     libsForQt5.qt5ct     # qt5 
     lsof                 # list open files
+    mpv                  # Video Player
     nautilus             # File Manager
     neofetch             # Neofetch
     nerdfonts            # Fonts from nerdfonts for icons etc.
     networkmanager_dmenu # GUI For network Mangager
+    nix-direnv           # nix Implementation for direnv
     ntfs3g               # NTFS File Formats
     obs-cmd              # OBS CLI
     obs-studio           # Video Recording
     openjdk17            # JAVA
+    openssl              # Library for SSL
     pavucontrol          # Volume Control Tool
     pamixer              # Volume Control CLI
     playerctl            # Media control
     polkit               # Authentication Agent
+    prisma-engines       # Engines for Prisma CLI
     pulseaudio           # Sound Server
     python3              # Python
     python3Packages.pip  # Python Package Manager
@@ -72,28 +78,33 @@ in {
     waybar               # Navbar
     webcamoid            # Webcam GUI
     wget                 # retrieve files over HTTP/HTTPS/FTP
+    wgnord               # Use wireguard for nordvpn
     wine                 # Run exe files
+    wireguard-tools      # CLI for wireguard
     wl-clipboard         # ClipBoard Manager
     wofi                 # Rofi for WayLand
     xdg-desktop-portal   # portal frontend
     xdg-desktop-portal-hyprland # ^ But for hyprland specificly
     unstable.ytmdesktop  # Youtube Music Desktop APP
-    zsh
+    zsh                  # ZSH shell
   ];
   
   ## ─────────────────────────────────────────────────────────────
   ## Environment Variables
   ## ─────────────────────────────────────────────────────────────
 
-  ## Set session type to Wayland (used by some apps to determine rendering backend)
-  environment.variables.XDG_SESSION_TYPE = "wayland";
-
   ## Extra environment variables for Wayland and NVIDIA compatibility.
   environment.variables = {
     WLR_NO_HARDWARE_CURSORS = "1";        ## Fixes invisible/missing cursor
     LIBVA_DRIVER_NAME = "nvidia";         ## Forces VA-API to use the NVIDIA backend
     __GLX_VENDOR_LIBRARY_NAME = "nvidia"; ## Tells GLX to use the NVIDIA vendor library
+    XDG_SESSION_TYPE = "wayland";         ## Tells XDG software we are using wayland
+    BROWSER = "brave";                    ## Use Brave as default browser
+    DEFAULT_BROWSER = "brave";            ## Use Brave as default browser
   };
+
+  # Enable gamemode used by some apps/games.
+  programs.gamemode.enable = true;
 
   ## ─────────────────────────────────────────────────────────────
   ## Fonts

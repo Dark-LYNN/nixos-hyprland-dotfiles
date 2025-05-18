@@ -12,7 +12,9 @@
     description = "Lynnux";   ## Description of user.
     extraGroups = [ "networkmanager" "wheel" "storage" "plugdev" ]; # Add user to specified groups
     group = "lynnux";         ## Primary group of the user
-    packages = with pkgs; []; ## Optionally specify packages for user.
+    packages = with pkgs; [
+      obsidian
+    ];
   };
 
   ## ─────────────────────────────────────────────────────────────

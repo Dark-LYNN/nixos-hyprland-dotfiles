@@ -53,12 +53,14 @@
     "format-connected": "󰂱 ",
     "format-disconnected": "󰂲 ",
     "tooltip": true,
-    "on-click": "blueman-manager"
+    "on-click": "~/.config/waybar/scripts/bt-picker.sh",
+    "on-click-right": "blueman-manager"
   },
   "bluetooth#text": {
     "tooltip": false,
     "format": "",
     "format-connected": "<b>{num_connections}</b>",
-    "on-click": "blueman-manager"
+    "on-click": "~/.config/waybar/scripts/bt-picker.sh",
+    "on-click-right": "blueman-manager"
   }
 }

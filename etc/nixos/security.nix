@@ -7,7 +7,7 @@
 
   ## Adding the Polkit GNOME package, which provides the authentication agent for GNOME
   environment.systemPackages = with pkgs; [  
-    polkit_gnome    ## Auth agent for gnome
+    polkit    ## Auth agent
   ];
 
   ## ─────────────────────────────────────────────────────────────

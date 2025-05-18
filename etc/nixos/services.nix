@@ -19,32 +19,31 @@
   ## ─────────────────────────────────────────────────────────────
   ## Xserver Settings
   ## ─────────────────────────────────────────────────────────────
-  services.flatpak.enable = true;  ## Enable Flatpak support
-  services.xserver.enable = true;  ## Enable Xserver
-  services.displayManager.sddm.enable = true;             ## Enable SDDM (login manager)
-  services.xserver.desktopManager.plasma5.enable = false; ## Disable Plasma5 desktop environment
-  services.xserver.videoDrivers = [ "nvidia" ];           ## Use NVIDIA proprietary drivers
-  ## keyboard layout
-  services.xserver.xkb = {
-    layout = "us";   ## Set the keyboard layout to US
-    variant = "";    ## No variant (US English without variations)
+  services.xserver = {
+    enable = true;                            ## Enable Xserver
+    desktopManager.plasma5.enable = false;    ## Disable Plasma5 desktop environment
+    videoDrivers = [ "nvidia" ];              ## Use NVIDIA proprietary drivers
+    xkb = {
+      layout = "us";                          ## Set the keyboard layout to US
+      variant = "";                           ## No variant (US English without variations)
+    };
   };
 
   ## ─────────────────────────────────────────────────────────────
   ## Enabled Services
   ## ─────────────────────────────────────────────────────────────
+  services.flatpak.enable = true;               ## Enable Flatpak
+  services.displayManager.sddm.enable = true;   ## Enable displayManger SDDM
   services.udisks2.enable = true;  ## Allows the system to automatically manage and mount disks.
   services.blueman.enable = true;  ## Enable Blueman for Bluetooth management.
   services.dbus.enable = true;     ## Enable the D-Bus message bus (communication between services)
   services.gvfs.enable = true;     ## Allow integration with GVFS (helps with file management)
-
-  ## Use greetd as login manager.
   services.greetd = {
-    enable = true;            ## Enable greetd
+    enable = true;                 ## Enable greetd
     settings = {
       default_session = {
-        command = "Hyprland"; ## Launch Hyprland.
-        user = "lynnux";      ## The user to log in as.
+        command = "Hyprland";      ## Launch Hyprland.
+        user = "lynnux";           ## The user to log in as.
       };
     };
   };
