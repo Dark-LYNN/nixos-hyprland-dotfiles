@@ -3,6 +3,7 @@
 {
   ## Import modular .nix files to keep this file clean.
   imports = [
+    ./automation.nix
     ./environment.nix
     ./hardware.nix
     ./hardware-configuration.nix

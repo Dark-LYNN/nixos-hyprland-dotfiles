@@ -52,6 +52,7 @@
   ## Enabled Settings
   ## ─────────────────────────────────────────────────────────────
   programs.steam.enable = true;    ## Enable Steam
+  programs.steam.gamescopeSession.enable = true; # Enables Steam in a gamescope Wayland session for better fullscreen
   programs.hyprland.enable = true; ## Enable Hyprland
   programs.seahorse.enable = true; ## Enable Seahorse
   programs.zsh = {

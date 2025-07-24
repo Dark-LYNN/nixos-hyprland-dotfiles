@@ -1,0 +1,22 @@
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "2da96e3"
+hash = "f9ee1436e3b853508d87f7d49dce56e6"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "c6d0de7"
+hash = "7b024fc14b462235068400207cbe7bf0"
+
+[[plugin.deps]]
+use = "Ape/simple-status"
+rev = "d0da104"
+hash = "68603fdd1dcaf415227e2c77a9317947"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "63f9650"
+hash = "a7ab702e1ef0c097defbc976ed34c186"
+
+[flavor]
+deps = []

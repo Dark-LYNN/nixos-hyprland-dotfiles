@@ -45,3 +45,47 @@
 	mouse_left_click = close_current
 	mouse_middle_click = do_action, close_current
 	mouse_right_click = close_all
+
+[urgency_low]
+timeout = 4
+background = "#121318"
+foreground = "#e3e1e9"
+frame_color = "#bac3ff"
+highlight = "#bac3ff"
+
+
+[urgency_normal]
+timeout = 4
+background = "#121318"
+foreground = "#e3e1e9"
+frame_color = "#bac3ff"
+highlight = "#bac3ff"
+
+
+[urgency_critical]
+timeout = 4
+background = "#121318"
+foreground = "#e3e1e9"
+frame_color = "#ff6961"
+highlight = "#bac3ff"
+
+
+[backlight]
+timeout = 1
+summary = "Backlight"
+highlight = "#bac3ff"
+set_stack_tag = "backlight"
+
+
+[volume]
+summary = "Volume"
+set_stack_tag = "volume"
+
+[volume-muted]
+summary = "Volume Muted"
+highlight = "#ee6a70"
+
+[volume-unmuted]
+summary = "Volume Unmuted"
+highlight = "#ee6a70"
+frame_width = 5

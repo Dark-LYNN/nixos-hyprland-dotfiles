@@ -1,0 +1,36 @@
+[mgr]
+linemode = "size_and_mtime"
+
+[plugin]
+prepend_preloaders = [
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+]
+prepend_previewers = [
+  { mime = "{audio,video,image}/*", run = "mediainfo"},
+  { mime = "application/subrip", run = "mediainfo" },
+  { name = "*.md", run = "glow" },
+]
+
+[open]
+prepend_rules = [
+  { name = "*.sh", use = [ "run" ] },
+  { name = "*.pdf", use = [ "pdf" ] },
+  { name = "*.exe", use = [ "run_exe" ]},
+]
+
+
+[opener]
+play = [
+  { run = 'mpv "$@"', orphan = true, for = "unix"},
+]
+pdf = [
+  { run = 'zathura "$1"', desc = "View PDF" }
+]
+run = [
+  { run = 'kitty -e bash "$1"', desc = "Run in terminal" },
+  { run = 'steam-run "$1"', desc = "Run trough steam-run" },
+]
+run_exe = [
+  { run = '/home/lynnux/.config/yazi/scripts/steam.sh "$1"', desc = "Run trough proton." }
+]

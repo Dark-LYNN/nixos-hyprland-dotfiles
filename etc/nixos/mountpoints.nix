@@ -9,9 +9,13 @@
   fileSystems."/mnt/other" = {
     device = "/dev/disk/by-uuid/XXXXXXXXXXXXXXXX";  ## UUID of the device.
     fsType = "ntfs";                                ## Filesystem type (NTFS, for compatibility with Windows)
-    options = [ "defaults" "nofail" ];
+    options = [ "defaults" "nofail" "uid=1000" "gid=1000" "dmask=022" "fmask=133"];
     ## "defaults" ~ uses default mount options for this filesystem
     ## "nofail" ~ allows the system to boot even if the mount fails
+    ## "uid=1000" ~ Mount under userID 1000
+    ## "gid=1000" ~ Mount under groupID 1000
+    ## "dmash=022" ~ Apply directory mask 022 (basicly make the directory perms `rwxr-xr-x`)
+    ## "fmask=133" ~ Apply file mask 133 (basicly make the files perms `rw-r--r--`)
   };
 
   ## Mount A HDD to "/mnt/games"
@@ -33,6 +37,14 @@
     device = "/dev/disk/by-uuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"; ## UUID of the device.
     fsType = "ext4";                               ## ext4 filesystem
     options = [ "defaults" "nofail" ];             ## Default mount options with nofail
+  };
+
+  ## Mount A USB to "/mnt/temp"
+  fileSystems."/mnt/temp" = {
+    device = "/dev/disk/by-uuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"; ## UUID of the device.
+    fsType = "ext4";                               ## ext4 filesystem
+    options = [ "defaults" "nofail" "noauto" ];
+    ## "noauto" ~ Do not automount.
   };
 }
 

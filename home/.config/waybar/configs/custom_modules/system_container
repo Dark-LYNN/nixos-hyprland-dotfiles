@@ -46,7 +46,8 @@
   "pulseaudio#text": {
     "tooltip": false,
     "format": "<b>{volume}</b>",
-    "format-bluetooth": "<b>{volume}</b>"
+    "format-bluetooth": "<b>{volume}</b>",
+    "on-click": "pavucontrol"
   },
   "bluetooth": {
     "format": "󰂱 ",

@@ -14,6 +14,7 @@ let unstable =
 in {
   ## Allow unfree packages being installed.
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = ["electron-33.4.11"];
 
   ## Packages ~ Installs on "nix-rebuild"
   environment.systemPackages = with pkgs; [
@@ -23,19 +24,22 @@ in {
     bluez-tools          # Bluetooth Tools
     brave                # Chromium Browser
     brightnessctl        # Brightness Manager
-    ckb-next             # Corsair Peripherals
+    ckb-next             # Corsair Stuff
     curl                 # transferring files with URL syntax
     dconf                # GSettings Backend
     direnv               # Directory custom environments
+    docker               # Docker
+    docker-compose       # Docker Compose
     dunst                # Notification Manager
     ffmpeg               # Video Processing/Encoding
-    firefox              # Browser
+    firefox              # Browser   
     font-manager         # Font Manager
     fuse                 # interface for userspace programs
     gimp                 # Image Software
     git                  # GIT CLI
     go                   # Go
     glib                 # GSettings
+    glow                 # Markdown viewer in terminal
     gnome-disk-utility   # Disk utilities
     gnome-keyring        # Keyring for sencitive data
     greetd.tuigreet      # Login Manager
@@ -50,12 +54,13 @@ in {
     libnotify            # Notifications
     libsForQt5.qt5ct     # qt5 
     lsof                 # list open files
+    mediainfo            # View Media Info on Videos and audio files
     mpv                  # Video Player
     nautilus             # File Manager
     neofetch             # Neofetch
-    nerdfonts            # Fonts from nerdfonts for icons etc.
+    nerdfonts
     networkmanager_dmenu # GUI For network Mangager
-    nix-direnv           # nix Implementation for direnv
+    nix-direnv
     ntfs3g               # NTFS File Formats
     obs-cmd              # OBS CLI
     obs-studio           # Video Recording
@@ -65,11 +70,10 @@ in {
     pamixer              # Volume Control CLI
     playerctl            # Media control
     polkit               # Authentication Agent
-    prisma-engines       # Engines for Prisma CLI
     pulseaudio           # Sound Server
-    python3              # Python
-    python3Packages.pip  # Python Package Manager
+    qbittorrent          # Torrenting
     swaybg               # Background Manager
+    tree                 # File Tree
     udisks2              # Storage Manager
     usbutils             # USB Utils
     v4l-utils            # Video Devices Manager
@@ -85,7 +89,8 @@ in {
     wofi                 # Rofi for WayLand
     xdg-desktop-portal   # portal frontend
     xdg-desktop-portal-hyprland # ^ But for hyprland specificly
-    unstable.ytmdesktop  # Youtube Music Desktop APP
+    unstable.ytmdesktop           # Youtube Music Desktop APP
+    unstable.yazi        # CLI File Manager
     zsh                  # ZSH shell
   ];
   

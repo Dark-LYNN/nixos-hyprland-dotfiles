@@ -18,7 +18,9 @@
     "custom/arrow-dec",
     "group/app-title-container"
   ],
-  "modules-center": [],
+  "modules-center": [
+    "tray"
+  ],
   "modules-right": [
     "cpu",
     "custom/dot",

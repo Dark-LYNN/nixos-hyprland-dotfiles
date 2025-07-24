@@ -9,6 +9,13 @@
     wantedBy = [ "multi-user.target" ];       # Ensure service starts after system boot
     serviceConfig.execStart = "modprobe v4l2loopback devices=1"; # Load v4l2loopback module to create a virtual webcam device
   };
+  
+  ## ─────────────────────────────────────────────────────────────
+  ## virtualization
+  ## ─────────────────────────────────────────────────────────────
+  virtualisation.docker = {
+    enable = true;
+  };
 
   ## ─────────────────────────────────────────────────────────────
   ## Hardware settings
