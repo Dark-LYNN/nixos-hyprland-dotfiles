@@ -50,5 +50,6 @@ export PATH="$QLTY_INSTALL/bin:$PATH"
 ## ─────────────────────────────────────────────────────────────
 alias code='codium'  # I use vscodium and use 'code ./' for convenience
 
-
 eval "$(direnv hook zsh)"
+
+export EDITOR=nvim
