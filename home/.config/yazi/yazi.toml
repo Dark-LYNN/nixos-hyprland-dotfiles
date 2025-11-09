@@ -14,15 +14,30 @@ prepend_previewers = [
 
 [open]
 prepend_rules = [
+  { mime = "video/*", use = [ "play" ]},
+
   { name = "*.sh", use = [ "run" ] },
   { name = "*.pdf", use = [ "pdf" ] },
   { name = "*.exe", use = [ "run_exe" ]},
+  { name = "*/", use = [ "dir" ] },
+  { name = "*.html", use = [ "browser" ]},
+  { name = "*.rpgmvp", use = [ "rpgmaker" ]},
+  { name = "*.*_", use = [ "rpgmaker" ]},
+  { name = "*.rar", use = [ "rar" ]},
+  { name = "*.bsg", use = [ "bsg" ]},
+  { name = "*.nix", use = [ "code" ]},
+  { name = "*.jar", use = [ "java" ]},
+  { name = "*.zip", use = [ "zip" ]},
+  { name = "*.7z", use = [ "zip" ]},
+  { name = "*.png", use = [ "image" ]},
+  { name = "*.jpg", use = [ "image" ]},
+  { name = "*.jpeg", use = [ "image" ]},
 ]
 
 
 [opener]
 play = [
-  { run = 'mpv "$@"', orphan = true, for = "unix"},
+  { run = 'kitty mpv "$1" --vo=kitty --vo-kitty-use-shm=yes', orphan = true, for = "unix", desc = "Run in terminal"},
 ]
 pdf = [
   { run = 'zathura "$1"', desc = "View PDF" }
@@ -30,7 +45,35 @@ pdf = [
 run = [
   { run = 'kitty -e bash "$1"', desc = "Run in terminal" },
   { run = 'steam-run "$1"', desc = "Run trough steam-run" },
+  { run = 'chmod +x "$1"', desc = "Allow to run" },
 ]
 run_exe = [
   { run = '/home/lynnux/.config/yazi/scripts/steam.sh "$1"', desc = "Run trough proton." }
+]
+dir = [
+  { run = '7z a "$1.7z" "$1"', desc = "Zip this folder in a .7z" },
+]
+browser = [
+  { run = 'firefox "$1"', desc = "Open with FireFox" },
+]
+rpgmaker = [
+  { run = '/mnt/codes/Codes/@Github/@lynnux-useless-codes/Lynnux-useless-codes/Useless-Codes/Game/RPGMaker/RPGMVP_Decryption/decrypt.sh "$1"', desc = "decode using RPGMPV Decoder" },
+]
+rar = [
+  { run = 'unrar x "$1"', desc = "Unzip using unrar" },
+]
+bsg = [
+  { run = '~/Documents/Codes/Files/Bishop_Engine/Bishop_BSG_Tool/bin/Release/net8.0/linux-x64/publish/Bishop_BSG_Tool -e -bpp32 "$1"', desc = "Convert to .png"},
+]
+code = [
+  { run = 'codium "$1"', desc = "Open in VSCodium" }
+]
+java = [
+  { run = 'java -jar "$1"', desc = "Open with Java"}
+]
+zip = [
+  { run = 'NAME=$(basename "$1" | cut -d. -f1) && mkdir -p "$NAME" && 7z x "$1" -o"$NAME"', desc = "Extract Archive"}
+]
+image = [
+  { run = 'kitty viu "$1"', desc = 'Open in terminal' }
 ]
