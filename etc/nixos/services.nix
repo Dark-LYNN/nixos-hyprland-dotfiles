@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, import, ... }:
 
 {
 
@@ -8,11 +8,15 @@
   xdg.portal = {
     enable = true;
     config = {
+      common.default = "hyprland";
       hyprland = {
         default = "wlr";
       };
     };
-    extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-hyprland
+    ];
     configPackages = [ pkgs.hyprland ];
   };
 
@@ -32,12 +36,14 @@
   ## ─────────────────────────────────────────────────────────────
   ## Enabled Services
   ## ─────────────────────────────────────────────────────────────
+  ## services.waydroid.enable = true;		## Enable Waydroid
   services.flatpak.enable = true;               ## Enable Flatpak
   services.displayManager.sddm.enable = true;   ## Enable displayManger SDDM
   services.udisks2.enable = true;  ## Allows the system to automatically manage and mount disks.
   services.blueman.enable = true;  ## Enable Blueman for Bluetooth management.
   services.dbus.enable = true;     ## Enable the D-Bus message bus (communication between services)
   services.gvfs.enable = true;     ## Allow integration with GVFS (helps with file management)
+  services.tumbler.enable = true; ## Allowe tumbler intergration
   services.greetd = {
     enable = true;                 ## Enable greetd
     settings = {
@@ -55,6 +61,7 @@
   programs.steam.gamescopeSession.enable = true; # Enables Steam in a gamescope Wayland session for better fullscreen
   programs.hyprland.enable = true; ## Enable Hyprland
   programs.seahorse.enable = true; ## Enable Seahorse
+  programs.xwayland.enable = true;       ## Enable XWayland
   programs.zsh = {
     enable = true;              ## Enable Zsh as the default shell
     ohMyZsh = {

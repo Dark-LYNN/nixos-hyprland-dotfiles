@@ -1,5 +1,18 @@
 { config, pkgs, ... }:
 
+let
+  ## Import nixos-25.05
+  nixos-25-05 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-25.05.tar.gz") {
+    config = config.nixpkgs.config;
+    system = pkgs.system;
+  };
+  ## Import unstable (master branch)
+  unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/master.tar.gz") {
+    config = config.nixpkgs.config;
+    system = pkgs.system;
+  };
+in
+
 {
   ## ─────────────────────────────────────────────────────────────
   ## User Settings
@@ -13,9 +26,18 @@
     extraGroups = [ "networkmanager" "wheel" "storage" "plugdev" "docker"]; # Add user to specified groups
     group = "lynnux";         ## Primary group of the user
     packages = with pkgs; [
+      android-tools
+      rofimoji
+      neovim
+      godot_4
+      zoxide
+      fzf
+      dotnet-sdk
       obsidian
+      unityhub
       mangohud
       gamescope
+      protontricks
       gamemode
       vulkan-tools
       libpulseaudio
@@ -24,10 +46,6 @@
       nodejs_23
       pnpm_10
       filebrowser
-      xfce.thunar
-      xfce.thunar-archive-plugin
-      xfce.thunar-volman
-      xfce.tumbler
       ffmpegthumbnailer
       gvfs
       simple-mtpfs
@@ -35,17 +53,51 @@
       jmtpfs
       p7zip
       yt-dlp
-      python3Packages.pypresence
       sshfs
       exiftool
       snixembed
       dbeaver-bin
       zathura
+      unrar-wrapper
+      zenity
+      tinyxxd
+      adwaita-icon-theme
+      neovim
+      waydroid
+      unstable.ytmdesktop
+      obs-studio           # Video Recording
+      vesktop              # Discord Client
+      vscodium             # VSCode
+      brave                # Chromium Browser
+      viu
+      winetricks
+      wine64
+      nexusmods-app
 
+      # ─── Skeuos GTK Theme ───────────────────────────────────────────────
+      (pkgs.stdenv.mkDerivation rec {
+        pname = "skeuos-gtk";
+        version = "latest";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "daniruiz";
+          repo = "skeuos-gtk";
+          rev = "20220629";
+          sha256 = "0v6gxabqzyc7jizfxlvvvf1n7in20vmhnnv5s4ghgqrsygmmxxbi";
+        };
+
+        installPhase = ''
+          mkdir -p $out/share/themes
+          cp -r themes/Skeuos-Blue-Dark $out/share/themes/
+        '';
+      })
+      papirus-icon-theme
     ];
   };
 
+
   services.gvfs.enable = true;
+
   programs.yazi.enable = true;
   programs.thunar = {
     enable = true;

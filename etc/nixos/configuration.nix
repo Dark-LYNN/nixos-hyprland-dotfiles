@@ -33,7 +33,7 @@
   networking.wireless.enable = true;       ## Enable wireless connections
 
   ## Optional firewall settings (open ports if needed)
-  # networking.firewall.allowedTCPPorts = []
+  ## networking.firewall.allowedTCPPorts = [ ];
   # networking.firewall.allowedUDPPorts = []
 
   ## ─────────────────────────────────────────────────────────────
@@ -52,8 +52,13 @@
     LC_NUMERIC = "es_ES.UTF-8";
     LC_PAPER = "es_ES.UTF-8";
     LC_TELEPHONE = "es_ES.UTF-8";
-    LC_TIME = "es_ES.UTF-8";
+    LC_TIME = "en_DK.UTF-8";
   };
+
+  ## ─────────────────────────────────────────────────────────────
+  ## virtualisation
+  ## ─────────────────────────────────────────────────────────────
+  virtualisation.waydroid.enable = true;
 
   ## ─────────────────────────────────────────────────────────────
   ## Version Lock

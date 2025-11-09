@@ -22,7 +22,6 @@ in {
     blueman              # Bluetooth GUI
     bluez                # Bluetooth Manager
     bluez-tools          # Bluetooth Tools
-    brave                # Chromium Browser
     brightnessctl        # Brightness Manager
     ckb-next             # Corsair Stuff
     curl                 # transferring files with URL syntax
@@ -37,6 +36,7 @@ in {
     fuse                 # interface for userspace programs
     gimp                 # Image Software
     git                  # GIT CLI
+    glib                 # C library for programming building blocks
     go                   # Go
     glib                 # GSettings
     glow                 # Markdown viewer in terminal
@@ -63,7 +63,6 @@ in {
     nix-direnv
     ntfs3g               # NTFS File Formats
     obs-cmd              # OBS CLI
-    obs-studio           # Video Recording
     openjdk17            # JAVA
     openssl              # Library for SSL
     pavucontrol          # Volume Control Tool
@@ -77,8 +76,6 @@ in {
     udisks2              # Storage Manager
     usbutils             # USB Utils
     v4l-utils            # Video Devices Manager
-    vesktop              # Discord Client
-    vscodium             # VSCode
     waybar               # Navbar
     webcamoid            # Webcam GUI
     wget                 # retrieve files over HTTP/HTTPS/FTP
@@ -88,12 +85,16 @@ in {
     wl-clipboard         # ClipBoard Manager
     wofi                 # Rofi for WayLand
     xdg-desktop-portal   # portal frontend
+    xdg-desktop-portal-gtk  # ^ But for gtk
     xdg-desktop-portal-hyprland # ^ But for hyprland specificly
-    unstable.ytmdesktop           # Youtube Music Desktop APP
     unstable.yazi        # CLI File Manager
     zsh                  # ZSH shell
+
+    ruby_3_2
+    gcc
+    temurin-bin-8  # Java 8
   ];
-  
+    
   ## ─────────────────────────────────────────────────────────────
   ## Environment Variables
   ## ─────────────────────────────────────────────────────────────
